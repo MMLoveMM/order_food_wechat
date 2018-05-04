@@ -1,0 +1,34 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/order/order",
+    "pages/recording/recording"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "科技服务订餐",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "首页",
+      "iconPath": "utils/icon/home.png",
+      "selectedIconPath": "utils/icon/homes.png"
+    },
+    {
+      "pagePath": "pages/order/order",
+      "text": "订餐",
+      "iconPath": "utils/icon/order.png",
+      "selectedIconPath": "utils/icon/orders.png"
+    },
+    {"pagePath": "pages/recording/recording",
+      "text": "记录",
+      "iconPath": "utils/icon/recording.png",
+      "selectedIconPath": "utils/icon/recordings.png"
+    }],
+    "selectedColor": "green"
+  }
+}

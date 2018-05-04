@@ -1,0 +1,6 @@
+<!--pages/recording/recording.wxml-->
+<view class='container'>
+  <view>
+    <text class='user-motto'>{{motto}}</text>
+  </view>
+</view>

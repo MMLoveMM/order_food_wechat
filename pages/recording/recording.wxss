@@ -1,0 +1,4 @@
+/* pages/recording/recording.wxss */
+.usermotto {
+  margin-top: 200px;
+}

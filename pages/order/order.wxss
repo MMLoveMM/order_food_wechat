@@ -1,0 +1,4 @@
+/* pages/order/order.wxss */
+.usermotto {
+  margin-top: 200px;
+}
