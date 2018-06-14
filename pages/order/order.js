@@ -11,38 +11,6 @@ Page({
     inputText: '请输入您的姓名'
   },
 
-  getUser: function() {
-    var self = this;
-
-    self.setData({
-      loading: true
-    });
-
-    wx.request({
-      url: getUserURL,
-      success: function(data) {
-        wx.showToast({
-          title: '请求成功',
-          icon: 'success',
-          mask: true,
-          duration: 3000
-        });
-
-        self.setData({
-          loading: false
-        });
-
-        console.log("request success : ", data);
-      },
-      fail: function({errorMsg}) {
-        console.log("request fail : ", errorMsg);
-        self.setData({
-          loading: false
-        });
-      }
-    })
-  },
-
   formSubmit: function(e) {
     var form = this;
 
@@ -51,7 +19,6 @@ Page({
         url: getUserURL,
         data: { name: e.detail.value.emptyName },
         success: function (request) {
-          console.log(request.data);
           if (!!request.data) {
             wx.showModal({
               content: '欢迎 ' + request.data.userName + ' 使用点餐系统，祝您使用愉快。',
@@ -71,8 +38,6 @@ Page({
         showCancel: false
       })
     }
-    
-    console.log(e.detail.value.emptyName);
   },
 
   /**
