@@ -1,6 +1,17 @@
 <!--pages/order/order.wxml-->
 <view class='container'>
-  <view>
-    <text class='user-motto'>{{motto}}</text>
-  </view>
+  <form catchsubmit="formSubmit" cachreset="formReset">
+    <view>
+      <input name='emptyName' style='border: 1px solid black;' placeholder='{{inputText}}' />
+    </view>
+
+    <view style='padding-top: 100px;'>
+      <button formType='submit' type='primary' loading='{{loading}}'>
+        <text>判断是否公司员工</text>
+      </button>
+      <button formType='reset' style='margin-top: 10px;'>
+        <text>重制</text>
+      </button>
+    </view>
+  </form>
 </view>

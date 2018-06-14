@@ -1,11 +1,78 @@
 // pages/order/order.js
+
+const getUserURL = 'http://59.110.168.228:8080/order_food_service/f/order/test?name=庞鹏军';
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    motto: '订餐页面'
+    inputText: '请输入您的姓名'
+  },
+
+  getUser: function() {
+    var self = this;
+
+    self.setData({
+      loading: true
+    });
+
+    wx.request({
+      url: getUserURL,
+      success: function(data) {
+        wx.showToast({
+          title: '请求成功',
+          icon: 'success',
+          mask: true,
+          duration: 3000
+        });
+
+        self.setData({
+          loading: false
+        });
+
+        console.log("request success : ", data);
+      },
+      fail: function({errorMsg}) {
+        console.log("request fail : ", errorMsg);
+        self.setData({
+          loading: false
+        });
+      }
+    })
+  },
+
+  formSubmit: function(e) {
+    var form = this;
+
+    if(!!e.detail.value.emptyName) {
+      wx.request({
+        url: getUserURL,
+        data: { name: e.detail.value.emptyName },
+        success: function (request) {
+          console.log(request.data);
+          if (!!request.data) {
+            wx.showModal({
+              content: '欢迎 ' + request.data.userName + ' 使用点餐系统，祝您使用愉快。',
+              showCancel: false
+            })
+          } else {
+            wx.showModal({
+              content: '对不起，您不是本公司员工',
+              showCancel: false
+            })
+          }
+        }
+      })
+    }else {
+      wx.showModal({
+        content: '请输入您的姓名',
+        showCancel: false
+      })
+    }
+    
+    console.log(e.detail.value.emptyName);
   },
 
   /**
