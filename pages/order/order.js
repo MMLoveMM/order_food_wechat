@@ -1,6 +1,6 @@
 // pages/order/order.js
 
-const getUserURL = 'http://59.110.168.228:8080/order_food_service/f/order/test?name=庞鹏军';
+const getUserURL = 'http://59.110.168.228:8080/order_food_service/f/order/test';
 
 Page({
 
