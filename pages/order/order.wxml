@@ -1,8 +1,12 @@
 <!--pages/order/order.wxml-->
-<view class='container'>
+<view class='o-container'>
   <form catchsubmit="formSubmit" cachreset="formReset">
-    <view>
-      <input name='emptyName' style='border: 1px solid black;' placeholder='{{inputText}}' />
+    <view class='o-cells o-cells_after-title'>
+      <view class='o-cell o-cell_input'>
+        <view class='o-cell_bd'>
+          <input name='emptyName' class='o-input' placeholder='{{inputText}}' />
+        </view>
+      </view>
     </view>
 
     <view style='padding-top: 100px;'>
